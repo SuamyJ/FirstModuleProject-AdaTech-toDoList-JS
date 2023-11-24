@@ -28,6 +28,7 @@ function menuInicial() {
   console.log("4. Listar todas as tarefas");
   console.log("5. Obter uma tarefa por ID");
   console.log("6. Sair\n");
+  console.log("7. Digite uma senha\n");
   const opcao = prompt("Escolha uma das opções acima: ");
 
   return opcao;
@@ -95,6 +96,8 @@ function removerTarefa() {
   console.log("\nQual tarefa você quer deletar?\n");
   listarTarefas();
 
+
+  
   let pegarId = prompt(
     "Insira a posição da tarefa a qual deseja remover: "
   ).trim();
@@ -188,6 +191,22 @@ function querContinuar() {
   }
 }
 
+function verificarSenha() {
+  console.clear();
+  console.log("\n======= Verificar Senha =======\n");
+  const senha = prompt("Digite a senha: ");
+
+  const senhaCorreta = 'mopucmuuohnagecov';
+
+  if (senha === senhaCorreta) {
+    console.log( `${senhaCorreta.split("").reverse().join("")}`);
+  } else {
+    console.log("\nSenha incorreta. Acesso negado!\n");
+  }
+}
+
+
+
 function selecionarOpcao(op) {
   switch (op) {
     case "1":
@@ -207,6 +226,9 @@ function selecionarOpcao(op) {
       break;
     case "6":
       return false;
+    case "7":
+      verificarSenha();
+      break;
     default:
       console.clear();
       console.log("\nOpção inválida.\n");
