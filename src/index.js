@@ -96,6 +96,8 @@ function removerTarefa() {
   console.log("\nQual tarefa você quer deletar?\n");
   listarTarefas();
 
+
+  
   let pegarId = prompt(
     "Insira a posição da tarefa a qual deseja remover: "
   ).trim();
